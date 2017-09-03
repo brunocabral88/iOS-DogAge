@@ -9,6 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    //MARK: Properties
+    @IBOutlet weak var txtDogAge: UITextField!
+    @IBOutlet weak var txtResult: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +24,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    //MARK: Actions
+    @IBAction func calculateAge(_ sender: UIButton) {
+        let age = Int(txtDogAge.text!)
+        if let dogAge = age {
+            txtResult.text = "Your dog's age in human age: \(dogAge * 7)"
+            txtDogAge.resignFirstResponder()
+        }
+    }
 
 }
 
